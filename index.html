@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Work</title>
+	<script src="make.js"></script>
+	<style>
+		body, html {
+			margin: 0;
+			padding: 0;
+			background: whitesmoke;
+		}
+		.shapes {
+			width: 100px;
+			height: 100px;
+			margin: 50px;
+			color: white;
+			text-align: center;
+			line-height: 100px;
+			float: left;
+		}
+		#circle {
+			background: linear-gradient(orchid, turquoise);
+			border-radius: 50px;
+		}
+		#triange {
+			width: 0;
+			height: 0;
+			border-left: 50px solid transparent;
+			border-right: 50px solid transparent;
+			border-bottom: 100px solid tomato;
+			line-height: 20px;
+			text-indent: 20px;
+		}
+		span {
+			display: inline-block;
+			margin: 45px 0 0 -42px;
+			text-indent: -2px;
+		}
+		#square {
+			background: limegreen;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="holder">
+
+		<div class="shapes" id="circle">I'm rotating</div>
+		<div class="shapes" id="triange"><span>I'm pulsing</span></div>
+		<div class="shapes" id="square">I'm shaking</div>
+
+	</div>
+
+	<script type="text/javascript">
+		
+	document.getElementById('circle').addEventListener("click", function() {
+		make("circle").circuit(1, 4, "X", false);
+	});
+
+	document.getElementById('triange').addEventListener("click", function() {
+		make("triange").pulse(2, 0.5);
+	});
+
+	document.getElementById('square').addEventListener("click", function() {
+		make("square").shake(3, 20, 1.2);
+	});
+
+	</script>
+
+</body>
+</html>
